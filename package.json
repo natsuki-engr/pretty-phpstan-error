@@ -1,24 +1,19 @@
 {
   "name": "pretty-phpstan-error",
+  "publisher": "natsuki-engr",
   "displayName": "pretty-phpstan-error",
   "description": "Make PHPStan error pretty on tooltip in VSCode.",
   "version": "0.0.1",
+  "license": "MIT",
   "engines": {
     "vscode": "^1.106.0"
   },
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": ["onLanguage:php"],
   "main": "./dist/extension.js",
-  "contributes": {
-    "commands": [
-      {
-        "command": "pretty-phpstan-error.helloWorld",
-        "title": "Hello World"
-      }
-    ]
-  },
+  "contributes": {},
   "scripts": {
     "vscode:prepublish": "npm run package",
     "compile": "npm run check-types && npm run lint && node esbuild.js",
@@ -34,15 +29,18 @@
     "test": "vscode-test"
   },
   "devDependencies": {
-    "@types/vscode": "^1.106.0",
     "@types/mocha": "^10.0.10",
     "@types/node": "22.x",
-    "typescript-eslint": "^8.46.3",
-    "eslint": "^9.39.1",
+    "@types/vscode": "^1.106.0",
+    "@vscode/test-cli": "^0.0.12",
+    "@vscode/test-electron": "^2.5.2",
     "esbuild": "^0.27.0",
+    "eslint": "^9.39.1",
     "npm-run-all": "^4.1.5",
     "typescript": "^5.9.3",
-    "@vscode/test-cli": "^0.0.12",
-    "@vscode/test-electron": "^2.5.2"
+    "typescript-eslint": "^8.46.3"
+  },
+  "dependencies": {
+    "phpstan-error-parser": "^0.1.0"
   }
 }
