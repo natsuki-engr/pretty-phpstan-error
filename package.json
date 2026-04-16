@@ -1,8 +1,10 @@
 {
   "name": "pretty-phpstan-error",
+  "publisher": "natsuki-engr",
   "displayName": "pretty-phpstan-error",
   "description": "Make PHPStan error pretty on tooltip in VSCode.",
   "version": "0.0.1",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/natsuki-engr/pretty-phpstan-error.git"
