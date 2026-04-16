@@ -1,71 +1,22 @@
-# pretty-phpstan-error README
+# pretty-phpstan-error
 
-This is the README for your extension "pretty-phpstan-error". After writing up a brief description, we recommend including the following sections.
+A VSCode extension that formats PHPStan error messages with Markdown styling on hover.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
-
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+- Displays PHPStan errors in a readable, formatted tooltip when hovering over PHP code
+- Highlights function names, method names, variable names, and PHPDoc tags as `inline code`
+- Preserves the original error message structure while improving readability
+- Falls back to the raw error message if parsing fails
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+- A PHPStan diagnostics provider (e.g. [phpstan-vscode](https://marketplace.visualstudio.com/items?itemName=SanderRonde.phpstan-vscode)) must be installed and active to supply diagnostics
 
-## Extension Settings
+## How It Works
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+When you hover over a PHP file, the extension checks for PHPStan diagnostics at the cursor position. It parses the error message using [phpstan-error-parser](https://www.npmjs.com/package/phpstan-error-parser) and renders key tokens — such as function names, method names, variables, and doc tags — as inline code in a Markdown tooltip.
 
-For example:
+## License
 
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+MIT
